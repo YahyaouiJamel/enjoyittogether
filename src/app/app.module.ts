@@ -26,7 +26,6 @@ import { AjoutCommentComponent } from './gestion/gestionCommentaire/ajout-commen
 import { AjoutReponseComponent } from './gestion/gestionReponse/ajout-reponse/ajout-reponse.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AmisComponent } from './back/amis/amis.component';
-import { AddComponent } from './register/add/add.component';
  
 
 @NgModule({
@@ -45,8 +44,7 @@ import { AddComponent } from './register/add/add.component';
     ListreponseComponent,
     AjoutCommentComponent,
     AjoutReponseComponent,
-    AmisComponent,
-    AddComponent
+    AmisComponent
     
     
   ],

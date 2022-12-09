@@ -13,7 +13,7 @@ import { ListavisComponent } from './gestion/gestionAvis/listavis/listavis.compo
 import { AjoutCommentComponent } from './gestion/gestionCommentaire/ajout-comment/ajout-comment.component';
 import { AjoutReponseComponent } from './gestion/gestionReponse/ajout-reponse/ajout-reponse.component';
 import { AmisComponent } from './back/amis/amis.component';
-import { AddComponent } from './register/add/add.component';
+
 
 const routes: Routes = [
   {path: 'crud',component: UsersComponent},
@@ -35,7 +35,7 @@ const routes: Routes = [
   {path:'ami',component: AmisComponent},
   {path:'feed',component: FeedbackComponent},
   {path:'rev',component: RevComponent},
-  {path:'ajouter',component: AddComponent}
+
   
 ];
 

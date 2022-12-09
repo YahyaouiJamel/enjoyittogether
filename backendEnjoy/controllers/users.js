@@ -33,6 +33,7 @@ router.put('/update/:id',(req,res)=>{
     })
   });
 
+
     router.get('/',(req,res)=>{
       db.membre_model.findAll().then((response)=>{
         res.status(200).send(response)}).catch((err)=>{

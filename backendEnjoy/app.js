@@ -9,7 +9,7 @@ var commentaireRouter = require('./controllers/commentaire');
 var usersRouter=require('./controllers/users');
 var avisRouter = require('./controllers/avis');
 var reponseRouter = require('./controllers/reponse');
-var registerRouter = require('./controllers/register');
+var userRouter=require('./routes/users');
 var app = express();
 
 // connect to database
@@ -33,8 +33,8 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/commentaire', commentaireRouter);
 app.use('/avis', avisRouter);
-app.use('/reponse', reponseRouter);
-app.use('/register', registerRouter);
+app.use('/user', userRouter);
+app.use('/reponse', reponseRouter)
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));

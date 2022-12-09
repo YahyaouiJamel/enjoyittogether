@@ -14,7 +14,7 @@ module.exports = sequelize => {
     },
     username: {
       type: DataTypes.STRING(255),
-      allowNull: true,
+      allowNull: false,
       defaultValue: null,
       primaryKey: false,
       autoIncrement: false,
@@ -23,7 +23,7 @@ module.exports = sequelize => {
     },
     email: {
       type: DataTypes.STRING(255),
-      allowNull: true,
+      allowNull: false,
       defaultValue: null,
       primaryKey: false,
       autoIncrement: false,
@@ -32,7 +32,7 @@ module.exports = sequelize => {
     },
     password: {
       type: DataTypes.STRING(255),
-      allowNull: true,
+      allowNull: false,
       defaultValue: null,
       primaryKey: false,
       autoIncrement: false,

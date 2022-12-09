@@ -7,73 +7,143 @@
             <div class="card-body p-md-5">
               <div class="row justify-content-center">
                 <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
-  
                   <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">Sign up</p>
                     <form #f="ngForm" class="mx-1 mx-md-4" novalidate [formGroup]="registerForm">
                       <div class="d-flex flex-row align-items-center mb-4">
-                      <i class="fas fa-user fa-lg me-3 fa-fw"></i>
                       <div class="form-outline flex-fill mb-0">
-                        <input type="text" id="form3Example1c" placeholder="Nom" formControlName="lastName" class="form-control" [ngClass]="{
+                        <input type="text" id="form3Example1c" placeholder="Nom" formControlName="nom"  name="nom" registerForm class="form-control" [ngClass]="{
                             'is-invalid':
-                              registerForm.get('lastName')?.touched &&
-                              !registerForm.get('lastName')?.valid
-                          }" name="lastName" ngModel />               
+                              registerForm.get('nom')?.touched &&
+                              !registerForm.get('nom')?.valid
+                          }" ngModel />               
                         <div class="invalid-feedback">
-                            <span *ngIf="registerForm.get('lastName')?.errors?.['required']">
-                              Entrez votre prenom (Obligatoire)
+                            <span *ngIf="registerForm.get('nom')?.errors?.['required']">
+                              Entrez votre nom (Obligatoire)
                             </span>
-                            <span *ngIf="registerForm.get('lastName')?.errors?.['maxlength']">
+                            <span *ngIf="registerForm.get('nom')?.errors?.['maxlength']">
                               Maxnimum 20 charactères
                             </span>
-                            <span *ngIf="registerForm.get('lastName')?.errors?.['minlength']">
+                            <span *ngIf="registerForm.get('nom')?.errors?.['minlength']">
                               Minimum 2 charactères
                             </span>
                           </div>
                       </div>          
                     </div>
                     <div class="d-flex flex-row align-items-center mb-4">
-                        <i class="fas fa-user fa-lg me-3 fa-fw"></i>
+                      <div class="form-outline flex-fill mb-0">
+                        <input type="text" id="form3Example1c" placeholder="Prenom" name="prenom" ngForm registerForm formControlName="prenom" class="form-control" [ngClass]="{
+                            'is-invalid':
+                              registerForm.get('prenom')?.touched &&
+                              !registerForm.get('prenom')?.valid
+                          }" />
+                        <div class="invalid-feedback">
+                            <span *ngIf="registerForm.get('prenom')?.errors?.['required']">
+                              Entrez votre Prenom (Obligatoire)
+                            </span>
+                            <span *ngIf="registerForm.get('prenom')?.errors?.['maxlength']">
+                              Maxnimum 20 charactères
+                            </span>
+                            <span *ngIf="registerForm.get('prenom')?.errors?.['minlength']">
+                              Minimum 2 charactères
+                            </span>
+                          </div>
+                      </div>
+                    </div>
+                    <div class="d-flex flex-row align-items-center mb-4">
                         <div class="form-outline flex-fill mb-0">
-                          <input type="text" id="form3Example1c" placeholder="Prenom" name="firstName" formControlName="firstName" class="form-control" [ngClass]="{
+                          <input type="number" id="form3Example1c" placeholder="Cin" name="cin" registerForm formControlName="cin" class="form-control" [ngClass]="{
                               'is-invalid':
-                                registerForm.get('firstName')?.touched &&
-                                !registerForm.get('firstName')?.valid
-                            }" ngModel/>
+                                registerForm.get('cin')?.touched &&
+                                !registerForm.get('cin')?.valid
+                            }" />
                           <div class="invalid-feedback">
-                              <span *ngIf="registerForm.get('firstName')?.errors?.['required']">
-                                Entrez votre nom (Obligatoire)
-                              </span>
-                              <span *ngIf="registerForm.get('firstName')?.errors?.['maxlength']">
-                                Maxnimum 20 charactères
-                              </span>
-                              <span *ngIf="registerForm.get('firstName')?.errors?.['minlength']">
-                                Minimum 2 charactères
+                              <span *ngIf="registerForm.get('cin')?.errors?.['required']">
+                                Entrez votre Cin (Obligatoire)
                               </span>
                             </div>
                         </div>
                       </div>
                       <div class="d-flex flex-row align-items-center mb-4">
-                      <i class="fas fa-envelope fa-lg me-3 fa-fw"></i>
+                        <div class="form-outline flex-fill mb-0">
+                          <input type="text" id="form3Example1c" placeholder="adresse" name="adresse"  registerForm formControlName="adresse" class="form-control" [ngClass]="{
+                              'is-invalid':
+                                registerForm.get('adresse')?.touched &&
+                                !registerForm.get('adresse')?.valid
+                            }" name="adresse"  />               
+                          <div class="invalid-feedback">
+                              <span *ngIf="registerForm.get('adresse')?.errors?.['required']">
+                                Entrez votre adresse (Obligatoire)
+                              </span>
+                            </div>
+                        </div>          
+                      </div>  
+                      
+                      <div class="d-flex flex-row align-items-center mb-4">
+                        <div class="form-outline flex-fill mb-0">
+                          <input type="number" id="form3Example1c" placeholder="age" name="age" registerForm formControlName="age" class="form-control" [ngClass]="{
+                              'is-invalid':
+                                registerForm.get('age')?.touched &&
+                                !registerForm.get('age')?.valid
+                            }" />
+                          <div class="invalid-feedback">
+                              <span *ngIf="registerForm.get('cin')?.errors?.['required']">
+                                Entrez votre age (Obligatoire)
+                              </span>
+                            </div>
+                        </div>
+                      </div>
+
+                      <div class="d-flex flex-row align-items-center mb-4">
+                        <div class="form-outline flex-fill mb-0">
+                          <input type="number" id="form3Example1c" placeholder="telephone" name="telephone" registerForm formControlName="telephone" class="form-control" [ngClass]="{
+                              'is-invalid':
+                                registerForm.get('telephone')?.touched &&
+                                !registerForm.get('telephone')?.valid
+                            }" />
+                          <div class="invalid-feedback">
+                              <span *ngIf="registerForm.get('telephone')?.errors?.['required']">
+                                Entrez votre telephone (Obligatoire)
+                              </span>
+                            </div>
+                        </div>
+                      </div>
+
+                      <div class="d-flex flex-row align-items-center mb-4">
+                     
                       <div class="form-outline flex-fill mb-0">
-                        <input type="email" id="form3Example3c"  placeholder="Votre email" name="mail" class="form-control" formControlName="emailFormControl" class="form-control" [ngClass]="{
+                        <input type="email" id="form3Example3c"  placeholder="Votre email" name="mail" ngForm class="form-control" formControlName="mail" class="form-control" [ngClass]="{
                           'is-invalid':
-                            registerForm.get('emailFormControl')?.touched &&
-                            !registerForm.get('emailFormControl')?.valid
-                        }" ngModel/>
+                            registerForm.get('mail')?.touched &&
+                            !registerForm.get('mail')?.valid
+                        }" />
                         <div class="invalid-feedback">
-                          <span *ngIf="registerForm.get('emailFormControl')?.errors?.['required']">
+                          <span *ngIf="registerForm.get('mail')?.errors?.['required']">
                             Entrez votre email (Obligatoire)
                           </span>
-                          <span *ngIf="registerForm.get('emailFormControl')?.errors?.['email']">
+                          <span *ngIf="registerForm.get('mail')?.errors?.['email']">
                             please enter a valid email ! 
                           </span>
                       </div>
                       </div>
                     </div>
                     <div class="d-flex flex-row align-items-center mb-4">
-                        <i class="fa-solid fa-user fa-lg me-3 fa-fw"></i>
+                    
+                      <div class="form-outline flex-fill mb-0">
+                    <fieldset>
+                      <div>
+                        <input type="radio" id="huey" name="genre" ngForm value="Homme" registerForm formControlName="genre" checked/>
+                        <label for="huey">Homme</label>
+
+                        <input type="radio" id="dewey" name="genre" ngForm value="Femme" formControlName="genre" registerForm>
+                        <label for="dewey">Femme</label>
+                      </div>
+                  </fieldset>
+                  </div>
+                  </div>
+                    <div class="d-flex flex-row align-items-center mb-4">
+                    
                         <div class="form-outline flex-fill mb-0">
-                          <input type="email" id="form3Example3c "name="login"  placeholder="Login"class="form-control" formControlName="login" class="form-control" [ngClass]="{
+                          <input type="text" id="form3Example3c "name="login" registerForm  placeholder="Login"class="form-control" formControlName="login" class="form-control" [ngClass]="{
                             'is-invalid':
                               registerForm.get('login')?.touched &&
                               !registerForm.get('login')?.valid
@@ -92,9 +162,9 @@
                         </div>
                       </div>
                     <div class="d-flex flex-row align-items-center mb-4">
-                      <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
+                      
                       <div class="form-outline flex-fill mb-0">
-                        <input type="password" id="form3Example4c" name="password" class="form-control" placeholder="password" formControlName="password" class="form-control" [ngClass]="{
+                        <input type="password" id="form3Example4c" name="password" registerForm class="form-control" placeholder="password" formControlName="password" class="form-control" [ngClass]="{
                           'is-invalid':
                             registerForm.get('password')?.touched &&
                             !registerForm.get('password')?.valid 
@@ -118,8 +188,8 @@
                     </div>
   
                     <div class="d-flex flex-row align-items-center mb-4">
-                      <i class="fas fa-key fa-lg me-3 fa-fw"></i>
-                     		<input type="password" class="form-control" formControlName="confirmPassword" placeholder="Confirm password" ngModel> 
+                     
+                     		<input type="password" class="form-control" formControlName="confirmPassword" placeholder="Confirm password" registerForm> 
 		<div *ngIf="registerForm.get('confirmPassword')?.errors" class="alert alert-danger small">
 			<div *ngIf="registerForm.get('confirmPassword')?.errors?.['required']"></div>
 
@@ -129,7 +199,7 @@
     
 	</div>
   <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
-                      <button type="submit" class="btn btn-primary btn-lg" [disabled]="!registerForm.valid" (click)="add(f.value)" >Register</button>
+                      <button type="submit" class="btn btn-primary btn-lg" [disabled]="!registerForm.valid" (click)="add(f.value)" routerLink="/login">Register</button>
                     </div>
                   </form>
   
@@ -137,8 +207,8 @@
                 <div class="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2">
                   <img src="/assets/imagesf/aventure.jpg"
                     class="img-fluid" alt="Sample image">
-  
                 </div>
+                
               </div>
             </div>
           </div>
@@ -146,4 +216,8 @@
       </div>
     </div>
   </section>
+  
+
+
+
 <app-footer-front></app-footer-front>

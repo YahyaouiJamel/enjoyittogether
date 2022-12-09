@@ -5,7 +5,7 @@ import {
   FormBuilder,
   Validators
 } from '@angular/forms';
-import { RegisterService } from 'src/app/services/register.service';
+import { CrudService } from 'src/app/services/crud.service';
 import { ConfirmPasswordValidator } from "./ConfirmPasswordValidator";
 @Component({
   selector: 'app-register',
@@ -16,16 +16,20 @@ export class RegisterComponent implements OnInit {
   public registerForm!: FormGroup;
   public errorMsg!: string;
 
-  constructor(private fb: FormBuilder , private u:RegisterService) { }
+  constructor(private fb: FormBuilder , private u:CrudService) { }
 
   ngOnInit(): void {
     this.registerForm = this.fb.group({
   
-      lastName:['', [Validators.required, Validators.maxLength(20),Validators.minLength(2)]],
-      firstName:['', [Validators.required, Validators.maxLength(20),Validators.minLength(2)]],
+      nom:['', [Validators.required, Validators.maxLength(20),Validators.minLength(2)]],
+      prenom:['', [Validators.required, Validators.maxLength(20),Validators.minLength(2)]],
       login:['', [Validators.required, Validators.maxLength(20),Validators.minLength(5)]],
-    
-      emailFormControl :['',[Validators.required, Validators.email]],
+      cin:['', [Validators.required]],
+      adresse:['', [Validators.required]],
+      age:['', [Validators.required]],
+      telephone:['', [Validators.required]],
+      genre:['', [Validators.required]],   
+      mail :['',[Validators.required, Validators.email]],
       password: ['', [
         Validators.required,
         //Validators.pattern('^(?=.*[0-9])(?=.*[a-zA-Z])([a-zA-Z0-9]+)$'),

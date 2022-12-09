@@ -1,192 +1,131 @@
 
 <app-nav-front></app-nav-front>
+<br><br><br><br><br>
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
-<div class="container">
-
-    <!-- Page header start -->
-    <div class="page-title">
-        <div class="row gutters">
-            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
-                <h5 class="title">Chat App</h5>
+<br>
+<br>
+<div class="container bootdey">
+<div class="email-app">
+    <nav>
+        <a href="#" class="btn btn-danger btn-block">New Email</a>
+        <ul class="nav">
+            <li class="nav-item">
+                <a class="nav-link" href="#"><i class="fa fa-inbox"></i> Inbox <span class="badge badge-danger">4</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#"><i class="fa fa-star"></i> Stared</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#"><i class="fa fa-rocket"></i> Sent</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#"><i class="fa fa-trash-o"></i> Trash</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#"><i class="fa fa-bookmark"></i> Important</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#"><i class="fa fa-inbox"></i> Inbox <span class="badge badge-danger">4</span></a>
+            </li>
+        </ul>
+    </nav>
+    <main>
+        <p class="text-center">New Message</p>
+        <form>
+            <div class="form-row mb-3">
+                <label for="to" class="col-2 col-sm-1 col-form-label">To:</label>
+                <div class="col-10 col-sm-11">
+                    <input type="email" class="form-control" id="to" placeholder="Type email">
+                </div>
             </div>
-            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12"> </div>
-        </div>
-    </div>
-    <!-- Page header end -->
-
-    <!-- Content wrapper start -->
-    <div class="content-wrapper">
-
-        <!-- Row start -->
-        <div class="row gutters">
-
-            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-
-                <div class="card m-0">
-
-                    <!-- Row start -->
-                    <div class="row no-gutters">
-                        <div class="col-xl-4 col-lg-4 col-md-4 col-sm-3 col-3">
-                            <div class="users-container">
-                                <div class="chat-search-box">
-                                    <div class="input-group">
-                                        <input class="form-control" placeholder="Search">
-                                        <div class="input-group-btn">
-                                            <button type="button" class="btn btn-info">
-                                                <i class="fa fa-search"></i>
-                                            </button>
-                                        </div>
-                                    </div>
-                                </div>
-                                <ul class="users">
-                                    <li class="person" data-chat="person1">
-                                        <div class="user">
-                                            <img src="https://www.bootdey.com/img/Content/avatar/avatar3.png" alt="Retail Admin">
-                                            <span class="status busy"></span>
-                                        </div>
-                                        <p class="name-time">
-                                            <span class="name">Steve Bangalter</span>
-                                            <span class="time">15/02/2019</span>
-                                        </p>
-                                    </li>
-                                    <li class="person" data-chat="person1">
-                                        <div class="user">
-                                            <img src="https://www.bootdey.com/img/Content/avatar/avatar1.png" alt="Retail Admin">
-                                            <span class="status offline"></span>
-                                        </div>
-                                        <p class="name-time">
-                                            <span class="name">Steve Bangalter</span>
-                                            <span class="time">15/02/2019</span>
-                                        </p>
-                                    </li>
-                                    <li class="person active-user" data-chat="person2">
-                                        <div class="user">
-                                            <img src="https://www.bootdey.com/img/Content/avatar/avatar2.png" alt="Retail Admin">
-                                            <span class="status away"></span>
-                                        </div>
-                                        <p class="name-time">
-                                            <span class="name">Peter Gregor</span>
-                                            <span class="time">12/02/2019</span>
-                                        </p>
-                                    </li>
-                                    <li class="person" data-chat="person3">
-                                        <div class="user">
-                                            <img src="https://www.bootdey.com/img/Content/avatar/avatar3.png" alt="Retail Admin">
-                                            <span class="status busy"></span>
-                                        </div>
-                                        <p class="name-time">
-                                            <span class="name">Jessica Larson</span>
-                                            <span class="time">11/02/2019</span>
-                                        </p>
-                                    </li>
-                                    <li class="person" data-chat="person4">
-                                        <div class="user">
-                                            <img src="https://www.bootdey.com/img/Content/avatar/avatar4.png" alt="Retail Admin">
-                                            <span class="status offline"></span>
-                                        </div>
-                                        <p class="name-time">
-                                            <span class="name">Lisa Guerrero</span>
-                                            <span class="time">08/02/2019</span>
-                                        </p>
-                                    </li>
-                                    <li class="person" data-chat="person5">
-                                        <div class="user">
-                                            <img src="https://www.bootdey.com/img/Content/avatar/avatar5.png" alt="Retail Admin">
-                                            <span class="status away"></span>
-                                        </div>
-                                        <p class="name-time">
-                                            <span class="name">Michael Jordan</span>
-                                            <span class="time">05/02/2019</span>
-                                        </p>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="col-xl-8 col-lg-8 col-md-8 col-sm-9 col-9">
-                            <div class="selected-user">
-                                <span>To: <span class="name">Emily Russell</span></span>
-                            </div>
-                            <div class="chat-container">
-                                <ul class="chat-box chatContainerScroll">
-                                    <li class="chat-left">
-                                        <div class="chat-avatar">
-                                            <img src="https://www.bootdey.com/img/Content/avatar/avatar3.png" alt="Retail Admin">
-                                            <div class="chat-name">Russell</div>
-                                        </div>
-                                        <div class="chat-text">Hello, I'm Russell.
-                                            <br>How can I help you today?</div>
-                                        <div class="chat-hour">08:55 <span class="fa fa-check-circle"></span></div>
-                                    </li>
-                                    <li class="chat-right">
-                                        <div class="chat-hour">08:56 <span class="fa fa-check-circle"></span></div>
-                                        <div class="chat-text">Hi, Russell
-                                            <br> I need more information about Developer Plan.</div>
-                                        <div class="chat-avatar">
-                                            <img src="https://www.bootdey.com/img/Content/avatar/avatar3.png" alt="Retail Admin">
-                                            <div class="chat-name">Sam</div>
-                                        </div>
-                                    </li>
-                                    <li class="chat-left">
-                                        <div class="chat-avatar">
-                                            <img src="https://www.bootdey.com/img/Content/avatar/avatar3.png" alt="Retail Admin">
-                                            <div class="chat-name">Russell</div>
-                                        </div>
-                                        <div class="chat-text">Are we meeting today?
-                                            <br>Project has been already finished and I have results to show you.</div>
-                                        <div class="chat-hour">08:57 <span class="fa fa-check-circle"></span></div>
-                                    </li>
-                                    <li class="chat-right">
-                                        <div class="chat-hour">08:59 <span class="fa fa-check-circle"></span></div>
-                                        <div class="chat-text">Well I am not sure.
-                                            <br>I have results to show you.</div>
-                                        <div class="chat-avatar">
-                                            <img src="https://www.bootdey.com/img/Content/avatar/avatar5.png" alt="Retail Admin">
-                                            <div class="chat-name">Joyse</div>
-                                        </div>
-                                    </li>
-                                    <li class="chat-left">
-                                        <div class="chat-avatar">
-                                            <img src="https://www.bootdey.com/img/Content/avatar/avatar3.png" alt="Retail Admin">
-                                            <div class="chat-name">Russell</div>
-                                        </div>
-                                        <div class="chat-text">The rest of the team is not here yet.
-                                            <br>Maybe in an hour or so?</div>
-                                        <div class="chat-hour">08:57 <span class="fa fa-check-circle"></span></div>
-                                    </li>
-                                    <li class="chat-right">
-                                        <div class="chat-hour">08:59 <span class="fa fa-check-circle"></span></div>
-                                        <div class="chat-text">Have you faced any problems at the last phase of the project?</div>
-                                        <div class="chat-avatar">
-                                            <img src="https://www.bootdey.com/img/Content/avatar/avatar4.png" alt="Retail Admin">
-                                            <div class="chat-name">Jin</div>
-                                        </div>
-                                    </li>
-                                    <li class="chat-left">
-                                        <div class="chat-avatar">
-                                            <img src="https://www.bootdey.com/img/Content/avatar/avatar3.png" alt="Retail Admin">
-                                            <div class="chat-name">Russell</div>
-                                        </div>
-                                        <div class="chat-text">Actually everything was fine.
-                                            <br>I'm very excited to show this to our team.</div>
-                                        <div class="chat-hour">07:00 <span class="fa fa-check-circle"></span></div>
-                                    </li>
-                                </ul>
-                                <div class="form-group mt-3 mb-0">
-                                    <textarea class="form-control" rows="3" placeholder="Type your message here..."></textarea>
-                                </div>
-                            </div>
+            <div class="form-row mb-3">
+                <label for="cc" class="col-2 col-sm-1 col-form-label">CC:</label>
+                <div class="col-10 col-sm-11">
+                    <input type="email" class="form-control" id="cc" placeholder="Type email">
+                </div>
+            </div>
+            <div class="form-row mb-3">
+                <label for="bcc" class="col-2 col-sm-1 col-form-label">BCC:</label>
+                <div class="col-10 col-sm-11">
+                    <input type="email" class="form-control" id="bcc" placeholder="Type email">
+                </div>
+            </div>
+        </form>
+        <div class="row">
+            <div class="col-sm-11 ml-auto">
+                <div class="toolbar" role="toolbar">
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-light">
+                            <span class="fa fa-bold"></span>
+                        </button>
+                        <button type="button" class="btn btn-light">
+                            <span class="fa fa-italic"></span>
+                        </button>
+                        <button type="button" class="btn btn-light">
+                            <span class="fa fa-underline"></span>
+                        </button>
+                    </div>
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-light">
+                            <span class="fa fa-align-left"></span>
+                        </button>
+                        <button type="button" class="btn btn-light">
+                            <span class="fa fa-align-right"></span>
+                        </button>
+                        <button type="button" class="btn btn-light">
+                            <span class="fa fa-align-center"></span>
+                        </button>
+                        <button type="button" class="btn btn-light">
+                            <span class="fa fa-align-justify"></span>
+                        </button>
+                    </div>
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-light">
+                            <span class="fa fa-indent"></span>
+                        </button>
+                        <button type="button" class="btn btn-light">
+                            <span class="fa fa-outdent"></span>
+                        </button>
+                    </div>
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-light">
+                            <span class="fa fa-list-ul"></span>
+                        </button>
+                        <button type="button" class="btn btn-light">
+                            <span class="fa fa-list-ol"></span>
+                        </button>
+                    </div>
+                    <button type="button" class="btn btn-light">
+                        <span class="fa fa-trash-o"></span>
+                    </button>
+                    <button type="button" class="btn btn-light">
+                        <span class="fa fa-paperclip"></span>
+                    </button>
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-light dropdown-toggle" data-toggle="dropdown">
+                            <span class="fa fa-tags"></span>
+                            <span class="caret"></span>
+                        </button>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="#">add label <span class="badge badge-danger"> Home</span></a>
+                            <a class="dropdown-item" href="#">add label <span class="badge badge-info"> Job</span></a>
+                            <a class="dropdown-item" href="#">add label <span class="badge badge-success"> Clients</span></a>
+                            <a class="dropdown-item" href="#">add label <span class="badge badge-warning"> News</span></a>
                         </div>
                     </div>
-                    <!-- Row end -->
                 </div>
-
+                <div class="form-group mt-4">
+                    <textarea class="form-control" id="message" name="body" rows="12" placeholder="Click here to reply"></textarea>
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-success">Send</button>
+                    <button type="submit" class="btn btn-light">Draft</button>
+                    <button type="submit" class="btn btn-danger">Discard</button>
+                </div>
             </div>
-
         </div>
-        <!-- Row end -->
-
-    </div>
-    <!-- Content wrapper end -->
-
+    </main>
 </div>
+</div>
+<br><br><br><br><br>
 <app-footer-front></app-footer-front>
