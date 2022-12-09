@@ -22,7 +22,7 @@ router.post('/register',(req,res)=>{
 });
 /*login user*/
   router.post('/login',(req,res)=>{
-    UserController.mail(req.body.mail,req.body.password)   
+    UserController.login(req.body.mail,req.body.password)   
   .then(token=>res.status(200).json({token:token}))
   .catch(err=>res.status(400).json({err:err}))
 

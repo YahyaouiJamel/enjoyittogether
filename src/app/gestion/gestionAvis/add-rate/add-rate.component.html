@@ -1,11 +1,5 @@
-<app-header-back></app-header-back>
-<app-nav-back></app-nav-back>
-<div class="container-fluid page-body-wrapper">
-  <app-side-back></app-side-back>
-  <router-outlet></router-outlet>
 
-  <section style="background-color: #e7dfde;">
-    <div class="container my-5 py-5">
+
       <div class="row d-flex justify-content-center">
         <div class="col-md-12 col-lg-12" style="padding-left: 20px;">
           <div class="card text-dark" style="text-align: center;width: 600px;margin-left: 150px;">
@@ -22,7 +16,7 @@
                 </div>
                 <hr />
                 <p>Rating: <b>{{ avis.valeur_avis }}</b></p>
-                <div >
+                <div>
                   <button class="btn btn-primary btn-rounded" [disabled]="ctrl.invalid" (click)="save()" style="margin-bottom: 40px;">Ajouter</button>
                   <button type="reset" (click)="ctrl.setValue(null)" class="btn btn-rounded" id="cancel" style="margin-bottom: 40px;margin-left: 20px;">Cancel</button>
                 </div>
@@ -32,7 +26,4 @@
           </div>
         </div>
       </div>
-    </div>
-  </section>
-</div>
-<app-footer-back></app-footer-back>
+   

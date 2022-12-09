@@ -26,11 +26,31 @@
               
             </div>
             <div class="card-hover-show">
-        
+                <a class=""  (click)="collapse.toggle()"
+                [attr.aria-expanded]="!gfg" aria-controls="collapseE" data-bs-target="#collapseE">
+                <i class="bi bi-star-fill" style="color: rgb(247, 247, 78);"></i> Add Rating
+                </a>
                 <a routerLink="/msg" class="btn btn-xs fs-10 btn-bold btn-primary" href="#" data-toggle="modal" data-target="#modal-contact">Message</a>
                 <a class="btn btn-xs fs-10 btn-bold btn-warning" href="#">Delete</a>
             </div>
         </footer>
+        <div class="card-footer py-3 border-0" style="background-color: #f8f9fa;" id="collapseE"
+        #collapse="ngbCollapse" [(ngbCollapse)]="gfg">
+        <app-add-rate></app-add-rate>
+        <br>
+        <div class="card">
+            <div class="card-body p-4">
+                <h4 class="text-center mb-4 pb-2">Rating star by users</h4>
+  
+                <div class="row">
+                    <app-list-rate></app-list-rate>
+  
+                </div>
+            </div>
+        </div>
+  
+  
+    </div>
     </div>
 
     <div class="card b-1 hover-shadow mb-20">

@@ -1,24 +1,28 @@
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <form #f="ngForm">
-        <div class="modal-body">
-            <textarea class="form-control" id="textAreaExample" rows="4" placeholder="Ajouter une réponse..."
-           style="background: #fff;" type="text" name="reponse" [(ngModel)]="reponse.reponse" #r="ngModel" required minlength="3" maxlength="100"></textarea>
-        </div>
-        <div class="alert alert-danger" *ngIf="r.invalid && r.touched">
-            <div *ngIf="r.errors?.['required']"> reponse is a required field</div>
-            <div *ngIf="r.errors?.['minlength']"> reponse minlength is equal to 3</div>
-            <div *ngIf="r.errors?.['maxlength']"> reponse maxlength is equal to 100</div>
-          </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-light btn-rounded" data-bs-dismiss="modal">Annuler</button>
-          <button type="button" class="btn btn-primary btn-rounded" [disabled]="f.invalid" (click)="save()">Ajouter</button>
-        </div>
-    </form>
+<div class="modal fade" id="exampleMm" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
+      <form #f="ngForm">
+      <div class="modal-body">
+          <textarea class="form-control" id="textAreaExample" rows="4" placeholder="Ajouter une réponse..."
+         style="background: #fff;" type="text" name="reponse" [(ngModel)]="reponse.contenu" #r="ngModel" required minlength="3" maxlength="100"></textarea>
+         <br>
+        </div>
+      <div style="text-align: left; margin-left: 10px;" >
+        <span class="text-danger"  *ngIf="r.invalid && r.touched && r.errors?.['required']">
+            <i class="bi bi-exclamation-octagon-fill"></i> reponse is a required field</span>
+            <span class="text-danger" *ngIf="r.errors?.['minlength']"><i class="bi bi-exclamation-octagon-fill"></i> reponse minlength is equal to 3</span>
+            <span class="text-danger" *ngIf="r.errors?.['maxlength']"> <i class="bi bi-exclamation-octagon-fill"></i>reponse maxlength is equal to 100</span>
+           
+        </div>
+        <br>
+      <div class="modal-footer">
+        <button type="reset" class="btn btn-light btn-rounded" data-bs-dismiss="modal">Annuler</button>
+        <button type="button" class="btn btn-primary btn-rounded" [disabled]="f.invalid" (click)="save()">Ajouter</button>
+      </div>
+  </form>
     </div>
   </div>
+</div>

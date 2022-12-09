@@ -15,8 +15,8 @@
                                 class="badge bg-success">Add</span></a>
                                 <br><br>
                             <div class="d-flex flex-start" *ngFor="let r of listreponse;let i = index">
-                                <img class="rounded-circle shadow-1-strong me-3" src="{{r.photo}}" alt="avatar"
-                                style="width: 5rem; height: 5rem;" />
+                                <img class="rounded-circle shadow-1-strong me-3" src="assets/images/face.png" alt="avatar"
+                                style="width: 4rem; height: 4rem;" />
                                 <div>
                                     <h6 class="fw-bold mb-1">{{r.membre}}</h6>
                                     <div class="d-flex align-items-center mb-3">
@@ -29,10 +29,10 @@
                                     </p>
                                     <br>
                                     <p class="mb-0">
-                                        {{r.reponse}}
+                                        {{r.contenu}}
                                     </p>
                                     <div>
-                                        <a [routerLink]="['/updateRepons',r.id]" class="link-muted"><span
+                                        <a [routerLink]="['/updateRepons',r.id_newcommentaire]" class="link-muted"><span
                                             class="badge bg-primary">Update</span></a>
                                 <a routerLink="/listr" class="link-muted"><span
                                         class="badge bg-danger" style="margin-left:10px ;" (click)="delete(r)" >Delete</span></a>

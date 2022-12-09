@@ -13,6 +13,7 @@ import { ReservationFrontComponent } from './reservation-front/reservation-front
 import { MessageComponent } from './message/message.component';
 import { InvitationComponent } from './invitation/invitation.component';
 import { ListComponent } from './list/list.component';
+import { AuthGuard } from '../services/auth.guard';
 
 
 const routes: Routes = [
@@ -22,7 +23,7 @@ const routes: Routes = [
   {path: 'reservation',component: ReservationFrontComponent},
   {path: 'login',component: LoginComponent},
   {path: 'register',component: RegisterComponent},
-  {path: 'profil',component: ProfilComponent},
+  {path: 'profil',component: ProfilComponent ,canActivate:[AuthGuard]},
   {path: 'messages',component: MessagesComponent},
   {path: 'invitation',component: InvitationComponent},
   {path: 'list',component: ListComponent},

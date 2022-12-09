@@ -28,6 +28,7 @@ import { InvitationComponent } from './invitation/invitation.component';
 import { MessageComponent } from './message/message.component';
 import { RevComponent } from './rev/rev.component';
 import { FeedbackComponent } from './feedback/feedback.component';
+import { AddRateComponent } from '../gestion/gestionAvis/add-rate/add-rate.component';
 
 
 
@@ -52,7 +53,9 @@ import { FeedbackComponent } from './feedback/feedback.component';
   InvitationComponent,
   MessageComponent,
   RevComponent,
-  FeedbackComponent
+  FeedbackComponent,
+  AddRateComponent
+
   
   
   ],

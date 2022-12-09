@@ -25,7 +25,7 @@ export class AjoutReponseComponent implements OnInit {
     }else {
       this.reponseService.getReponseById(this.id).subscribe(res=>{
          this.reponse=res;
-        this.titre = 'Update reponse'+res.reponse;}) 
+        this.titre = 'Update reponse'+res.contenu;}) 
     }
   }
   save()
@@ -39,5 +39,4 @@ export class AjoutReponseComponent implements OnInit {
   }
 
 }
-
 }

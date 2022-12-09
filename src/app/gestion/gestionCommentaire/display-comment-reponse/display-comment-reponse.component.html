@@ -1,27 +1,30 @@
 <div class="col-md-8">
-    <div class="d-flex flex-start" *ngFor="let c of listcomment;let i = index">
+    <div class="d-flex flex-start" *ngFor='let c of listcomment'>
         <img class="rounded-circle shadow-1-strong me-3"
-            src="{{c.photo}}" alt="avatar" style="width: 20%; height: 50px;" />
+            src="assets/images/face.png" alt="avatar" style="width: 20%; height: 50px;" />
         <div class="flex-grow-1 flex-shrink-1">
             <div>
                 <div class="d-flex justify-content-between align-items-center">
                     <p class="mb-1">
                         {{c.membre}} <span class="small">- {{c.date}}</span>
                     </p>
-                    <a href="#exampleModal" data-bs-toggle="modal" data-bs-target="#exampleModal"><i
-                            class="fas fa-reply fa-xs"></i><span class="small"> reply</span></a>
-                </div>
+                    <a href="#exampleMm" data-bs-toggle="modal" data-bs-target="#exampleMm"><i
+                            class="fas fa-reply fa-xs"></i><span class="small"></span></a>
+                            <i><span
+                                class="bi bi-trash fa-xs" (click)="deletec(c)" style="color: rgb(223, 8, 8); margin-left: 20px;"></span></i>
+                               
+               </div>
                 <p class="small mb-0">
-                    {{c.commentaire}}
+                    {{c.contenu}}
                 </p>
 
             </div>
 
-            <div class="d-flex flex-start mt-4" *ngFor="let r of listreponse;let i = index" >
-               <div *ngIf="r.commentaire==c.commentaire">
+            <div class="d-flex flex-start mt-4" *ngFor='let r of listreponse' >
+               <div *ngIf="r.commentaire==c.contenu">
                 <a class="me-3" href="#">
                     <img class="rounded-circle shadow-1-strong"
-                        src="{{r.photo}}" alt="avatar" style="width: 20%; height: 50px;" />
+                    src="assets/images/face.png" alt="avatar" style="width: 20%; height: 50px;" />
                 </a>
                 <div class="flex-grow-1 flex-shrink-1">
                     <div>
@@ -29,9 +32,12 @@
                             <p class="mb-1">
                                 {{r.membre}} <span class="small">- {{r.date}}</span>
                             </p>
+                            <i><span
+                                class="bi bi-trash fa-xs" (click)="deleter(r)" style="color: rgb(223, 8, 8); margin-left: 20px;"></span></i>
+                               
                         </div>
                         <p class="small mb-0">
-                            {{r.reponse}}
+                            {{r.contenu}}
                         </p>
                     </div>
                 </div>

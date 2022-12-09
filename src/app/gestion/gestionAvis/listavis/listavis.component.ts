@@ -16,7 +16,7 @@ export class ListavisComponent implements OnInit {
     this.avisService.getAvis().subscribe((data: Avis[])=>this.listavis=data);
   }
   delete(avis:Avis):void {
-    this.avisService.deleteAvis(avis.id).subscribe(res=>alert("Rate deleted successfully"));
+    this.avisService.deleteAvis(avis.id_avis).subscribe(res=>alert("Rate deleted successfully"));
   }
 
 }

@@ -13,7 +13,6 @@ db.avis_model.create(req.body).then((response)=>{
   res.status(201).send(response)}).catch((err)=>{
 res.status(400).send(err)
 })
-
 });
 
 router.put('/update/:id',(req,res)=>{

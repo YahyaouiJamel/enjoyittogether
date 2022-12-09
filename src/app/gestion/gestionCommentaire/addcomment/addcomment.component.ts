@@ -24,7 +24,7 @@ export class AddcommentComponent implements OnInit {
     }else {
       this.commentService.getCommentById(this.id).subscribe(res=>{
          this.comment=res;
-        this.titre = 'Update reponse'+res.commentaire;}) 
+        this.titre = 'Update reponse'+res.contenu;}) 
     }
   }
   save()

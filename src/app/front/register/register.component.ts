@@ -5,7 +5,9 @@ import {
   FormBuilder,
   Validators
 } from '@angular/forms';
+import { Router } from '@angular/router';
 import { CrudService } from 'src/app/services/crud.service';
+import { UserService } from 'src/app/services/users.service';
 import { ConfirmPasswordValidator } from "./ConfirmPasswordValidator";
 @Component({
   selector: 'app-register',
@@ -16,7 +18,7 @@ export class RegisterComponent implements OnInit {
   public registerForm!: FormGroup;
   public errorMsg!: string;
 
-  constructor(private fb: FormBuilder , private u:CrudService) { }
+  constructor(private fb: FormBuilder , private u:UserService, private r:Router) { }
 
   ngOnInit(): void {
     this.registerForm = this.fb.group({
@@ -48,6 +50,7 @@ export class RegisterComponent implements OnInit {
     this.u.addUser(f).subscribe(
       ()=>{
         console.log('succes')
+        this.r.navigate(['/home'])
       }
     )
   }

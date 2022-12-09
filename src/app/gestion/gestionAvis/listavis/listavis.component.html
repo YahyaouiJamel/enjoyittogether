@@ -3,36 +3,39 @@
 <div class="container-fluid page-body-wrapper">
     <app-side-back></app-side-back>
     <router-outlet></router-outlet>
+
     <section style="background-color: #e7dfde;">
-    <div class="content-wrapper">
         <div class="container my-5 py-5">
+            <div class="row d-flex justify-content-center">
+                <div class="col-md-12 col-lg-12" style="padding-left: 20px;">
+                    <div class="card text-dark">
               
 
                     <div class="row">
-                        <div>
-                            <h4 class="mb-0">Recent rates</h4>
-                        <p class="fw-light mb-4 pb-2">Latest rates section by users</p>
+                        <div style="margin-left: 40px;margin-top: 20px;">
+                            <h4 class="mb-0">Rating</h4>
+                        <p class="fw-light mb-4 pb-2">Latest rating section by users</p>
                         <a routerLink="/adda"  class="link-muted"><span
                             class="btn btn-success btn-rounded">Add</span></a>
                         </div>
                         <div class="col-md-3" *ngFor="let a of listavis;let i = index">
                             
-                          <div class="card" style="width: 20rem;">
+                          <div class="card" style="width: 20rem; border :none; text-align: center;">
                             
-                            <img src="{{a.photo}}" class="rounded-circle shadow-1-strong me-3" style="width: 5rem;" alt="avatar">
+                            <img src="assets/images/face.png" class="rounded-circle shadow-1-strong mx-auto d-block" style="width: 5rem;" alt="avatar">
                             <div class="card-body">
                               
-                                <h5 class="card-title">{{a.amis}}</h5>
+                                <h5 class="card-title">{{a.membre}}</h5>
                                 <p class="card-text">
-                                    Rate : {{a.rate}}<i class="fas fa-star" style="color: #fcff42;"></i>
+                                    Rate : {{a.valeur_avis}}<i class="fas fa-star" style="color: #fcff42;"></i>
                                 </p>
             
                              <div class="third mt-4">
                     
-                                <a [routerLink]="['/updateRate',a.id]"  class="link-muted"><span
+                                <a [routerLink]="['/updateRate',a.id_avis]"  class="link-muted"><span
                                     class="btn btn-primary btn-rounded">Update</span></a>
                                 <a routerLink="/lista" class="link-muted"><span
-                                    class="btn btn-danger btn-rounded" (click)="delete(a)">Delete</span></a>
+                                    class="btn btn-danger btn-rounded" (click)="delete(a)" style="margin-left: 10px;">Delete</span></a>
                             
                              
                              </div>
@@ -40,7 +43,8 @@
                             </div>
                           </div>
                         </div>
-
+                    </div>
+                </div>
             </div>
         </div>
 </div>

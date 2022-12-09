@@ -1,14 +1,16 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Avis } from 'src/app/model/Avis';
 import { AvisService } from 'src/app/services/avis.service';
-import { FormControl, Validators } from '@angular/forms';
+
 @Component({
-  selector: 'app-addavis',
-  templateUrl: './addavis.component.html',
-  styleUrls: ['./addavis.component.css']
+  selector: 'app-add-rate',
+  templateUrl: './add-rate.component.html',
+  styleUrls: ['./add-rate.component.css']
 })
-export class AddavisComponent implements OnInit {
+export class AddRateComponent implements OnInit {
+
   ctrl = new FormControl(null, Validators.required);
   avis : Avis=new Avis();
   id:any;
@@ -33,13 +35,12 @@ export class AddavisComponent implements OnInit {
 {
   console.log(this.avis);
   if(this.id === undefined){
-    this.avisService.addAvis(this.avis).subscribe(res=>this.router.navigateByUrl('/lista'));  
+    this.avisService.addAvis(this.avis).subscribe(res=>alert("Rating added successfully"));  
   }else{
     this.avisService.updateAvis(this.id,this.avis).subscribe((data)=>this.router.navigateByUrl('/lista'));  
     
   }
 
 }
-  }
 
-
+}

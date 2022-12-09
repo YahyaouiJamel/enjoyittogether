@@ -17,15 +17,15 @@
                         <li><a routerLink="/deals">Voyages</a></li>
                         <li><a routerLink="/reservation">Reservation</a></li>
                         <li><a routerLink="/feed">feedback</a></li>
-                       <li> <a> <button type="button" class="btn btn-info px-3 " style ="color: #fff;" data-bs-target="#exampleModal" data-bs-toggle="modal">Login</button> </a></li>
+                       <li> <a> <button type="button" class="btn btn-info px-3 " style ="color: #fff;" data-bs-target="#exampleModal" data-bs-toggle="modal" *ngIf="!islogin()">Login</button> </a></li>
                        <li> 
-                        <div class="imgprofil">
+                        <div class="imgprofil" *ngIf="islogin()">
                         <div class="dropdown"> <div class="profile"> <img class="dropbtn" src="./assets/imagesf/profil.gif"> <div class="dropdown-content"> 
                             <ul> 
                                 <li><a routerLink="/profil"><i class='bx bx-cog' ></i><span>Settings</span></a></li> 
                                 <li><a routerLink="/profil"><i class='bx bx-user'></i><span>Profil</span></a></li> 
                                 <li><a routerLink="/messages"><i class='bx bx-cog' ></i><span>Inbox</span></a></li> 
-                                <li><a routerLink="/home"><i class='bx bx-cog' ></i><span>Logout</span></a></li> 
+                                <li><a routerLink="/home" (click)="logout()" ><i class='bx bx-cog' ></i><span>Logout</span></a></li> 
                             </ul>
                          </div>
                          </div>

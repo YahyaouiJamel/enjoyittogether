@@ -25,7 +25,7 @@
 					</div>
 				</div>
 			</div>
-			<table class="table table-striped table-hover">
+			<table class="table table-striped table-hover" >
 				<thead>
 					<tr>
 						<th>
@@ -48,7 +48,7 @@
 					
 					</tr>
 				</thead>
-				<tbody>
+				<tbody >
 					<tr *ngFor="let user of users">
 						<td>
 							<span class="custom-checkbox">
@@ -224,7 +224,7 @@
 <div id="deleteEmployeeModal" class="modal fade">
 	<div class="modal-dialog">
 		<div class="modal-content">
-			<form #f="ngForm">
+			<form #f="ngForm" >
 				<div class="modal-header">						
 					<h4 class="modal-title">Delete Membre</h4>
 					<button type="button" class="close" data-dismiss="modal" aria-hidden="true" style="
@@ -237,7 +237,7 @@
 				<div class="modal-footer">
 					<input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel" style="
 					border-radius: 30px;">
-					<input type="submit" class="btn btn-danger" value="Delete" (click)="delete(f.value)" style="
+					<input type="submit" class="btn btn-danger" value="Delete" (click)="delete(users)" style="
 					border-radius: 30px;" >
 				</div>
 			</form>

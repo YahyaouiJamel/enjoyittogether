@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-nav-front',
@@ -7,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavFrontComponent implements OnInit {
 
-  constructor() { }
+  constructor(private route:Router) { }
 
   ngOnInit(): void {
   }
+  islogin(){
+    return localStorage.getItem('token')
+   }
 
+   logout(){
+    localStorage.removeItem('token')
+    this.route.navigate(['/home'])
+  } 
 }

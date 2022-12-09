@@ -10,6 +10,7 @@ var usersRouter=require('./controllers/users');
 var avisRouter = require('./controllers/avis');
 var reponseRouter = require('./controllers/reponse');
 var userRouter=require('./routes/users');
+var reponseRouter = require('./controllers/reponse');
 var app = express();
 
 // connect to database

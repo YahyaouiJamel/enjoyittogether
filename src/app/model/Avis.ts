@@ -1,6 +1,7 @@
 export class Avis{
-    id!: number;
-    amis!: string;
-    rate!:number;
-    photo!: string;
+    id_avis!: number;
+    membre!: string;
+    valeur_avis!:number;
+    date!:string;
+    id_membre!: number;
 }

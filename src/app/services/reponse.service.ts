@@ -9,30 +9,33 @@ import { Reponse } from '../model/Reponse';
 export class ReponseService {
 
   constructor( private http: HttpClient) { }
-  reponsesUrl='http://localhost:3000/reponses';
+  reponsesUrl='http://localhost:3000/reponse';
   httpOptions = {
     headers: new HttpHeaders({
     'Content-Type': 'application/json'
     })
   }
+ 
   getReponse():Observable<Reponse[]>{
     return this.http.get<Reponse[]>(this.reponsesUrl);
   }
   addReponse (reponse: Reponse): Observable<Reponse> {
-    reponse.commentaire = "welcome VDHJFSDQKJLF njkd jhzezejhffjkd djskdkd khgyf !";
-    reponse.photo = "https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(19).webp";
-    reponse.membre = "salima brinsi";
-    reponse.date = "6 nov";
-    return this.http.post<Reponse>(this.reponsesUrl, reponse,this.httpOptions);}
+    reponse.commentaire = "good voyage";
+   // reponse.photo = "https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(19).webp";
+    reponse.membre = "salima";
+    reponse.id_membre= 1;
+    reponse.id_commentaire=12;
+    //reponse.date = "6 nov";
+    return this.http.post<Reponse>(this.reponsesUrl+'/add', reponse,this.httpOptions);}
   deleteReponse(id:any): Observable<any>{
-      return this.http.delete<any>(this.reponsesUrl+'/'+id);
+      return this.http.delete<any>(this.reponsesUrl+'/remove/'+id);
     }
   
   getReponseById(id:any):Observable<Reponse>{
-      return this.http.get<Reponse>(this.reponsesUrl+'/'+id);
+      return this.http.get<Reponse>(this.reponsesUrl+'/reponse/'+id);
     }
   
   updateReponse(id:any,reponse: Reponse): Observable<any>{
-      return this.http.put(this.reponsesUrl+'/'+id,reponse,this.httpOptions);
+      return this.http.put(this.reponsesUrl+'/update/'+id,reponse,this.httpOptions);
     }
 }

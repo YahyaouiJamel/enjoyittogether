@@ -1,8 +1,10 @@
 export class Reponse{
-    id!: number;
+    id_newcommentaire!: number;
     membre!: string;
-    reponse!: string;
+    contenu!: string;
     commentaire!:string;
     date!:string;
+    id_commentaire!: number;
+    id_membre!: number;
     photo!:string;
 }

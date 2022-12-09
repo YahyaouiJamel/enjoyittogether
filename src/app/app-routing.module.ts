@@ -13,6 +13,7 @@ import { ListavisComponent } from './gestion/gestionAvis/listavis/listavis.compo
 import { AjoutCommentComponent } from './gestion/gestionCommentaire/ajout-comment/ajout-comment.component';
 import { AjoutReponseComponent } from './gestion/gestionReponse/ajout-reponse/ajout-reponse.component';
 import { AmisComponent } from './back/amis/amis.component';
+import { LoginComponent } from './front/users/login/login.component';
 
 
 const routes: Routes = [
@@ -35,6 +36,7 @@ const routes: Routes = [
   {path:'ami',component: AmisComponent},
   {path:'feed',component: FeedbackComponent},
   {path:'rev',component: RevComponent},
+  {path:'login',component: LoginComponent},
 
   
 ];

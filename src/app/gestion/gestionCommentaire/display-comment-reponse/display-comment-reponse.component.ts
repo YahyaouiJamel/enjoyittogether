@@ -22,10 +22,10 @@ export class DisplayCommentReponseComponent implements OnInit {
  
   }
   deleter(reponse:Reponse):void {
-    this.reponseService.deleteReponse(reponse.id).subscribe(res=>alert("Reponse deleted successfully"));
+    this.reponseService.deleteReponse(reponse.id_newcommentaire).subscribe(res=>alert("Reponse deleted successfully"));
   }
   deletec(comment:Commentaire):void {
-    this.commentService.deleteComment(comment.id).subscribe(res=>alert("Commentaire deleted successfully"));
+    this.commentService.deleteComment(comment.id_commentaire).subscribe(res=>alert("Commentaire deleted successfully"));
   }
   }
 

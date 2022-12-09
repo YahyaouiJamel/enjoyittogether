@@ -3,28 +3,46 @@
 <div class="container-fluid page-body-wrapper">
     <app-side-back></app-side-back>
     <router-outlet></router-outlet>
+    <section style="background-color: #e7dfde;">
+        <div class="container my-5 py-5">
+            <div class="row d-flex justify-content-center">
+                <div class="col-md-12 col-lg-12" style="padding-left: 20px;">
+                    <div class="card text-dark" style="text-align: center;width: 600px;margin-left: 150px;">
+                        <form #f="ngForm">
+                            <br>
+                            <h3 style="color: #22b3c1;"><strong>Add reponse</strong></h3>
+                            <div class="d-flex flex-start w-100">
 
-<form #f="ngForm">
-    <br> <br> <br> <br> <br> <br><br> <br> <br>
-    <div class="d-flex flex-start w-100">
-        <div class="form-outline w-100">
-            <textarea class="form-control" id="textAreaExample" rows="4" placeholder="Ajouter une reponse..." data-bs-toggle="collapse"
-                href="#collapseExample" aria-expanded="false" aria-controls="collapseExample"
-                style="background: #fff;" type="text" name="reponse" [(ngModel)]="reponse.reponse" #r="ngModel" required minlength="3" maxlength="100"></textarea>
-                <br>
+                                <div class="form-outline w-100">
+                                    <textarea class="form-control" id="textAreaExample" rows="4"
+                                        placeholder="Ajouter une reponse..." data-bs-toggle="collapse"
+                                        href="#collapseExample" aria-expanded="false" aria-controls="collapseExample"
+                                        style="background: #fff; width: 400px;margin: auto;" type="text" name="reponse"
+                                        [(ngModel)]="reponse.contenu" #r="ngModel" required minlength="3"
+                                        maxlength="100"></textarea>
+                                    <br>
+                                </div>
+                            </div>
+                            
+                            <div style="text-align: left; margin-left: 100px;" >
+                                <span class="text-danger"  *ngIf="r.invalid && r.touched && r.errors?.['required']">
+                                    <i class="bi bi-exclamation-octagon-fill"></i> reponse is a required field</span>
+                                    <span class="text-danger" *ngIf="r.errors?.['minlength']"><i class="bi bi-exclamation-octagon-fill"></i> reponse minlength is equal to 3</span>
+                                    <span class="text-danger" *ngIf="r.errors?.['maxlength']"> <i class="bi bi-exclamation-octagon-fill"></i>reponse maxlength is equal to 100</span>
+                                   
+                                </div>
+                                <br>
+                            <div class="float-end mt-2 pt-1" class="collapse" id="collapseExample"
+                                style="margin-bottom: 20px;">
+                                <button type="button" class="btn btn-primary btn-rounded" [disabled]="f.invalid"
+                                    (click)="save()">Post reponse</button>
+                                <button type="reset" id="cancel" class="btn btn-rounded" style="margin-left: 20px;">Cancel</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
         </div>
-        
-        <div class="alert alert-danger" *ngIf="r.invalid && r.touched">
-            <div *ngIf="r.errors?.['required']"> reponse is a required field</div>
-            <div *ngIf="r.errors?.['minlength']"> reponse minlength is equal to 3</div>
-            <div *ngIf="r.errors?.['maxlength']"> reponse maxlength is equal to 100</div>
-          </div>
-        
-    </div>
-    <div class="float-end mt-2 pt-1" class="collapse" id="collapseExample">
-        <button type="button" class="btn btn-primary btn-rounded" [disabled]="f.invalid" (click)="save()">Post reponse</button>
-        <button type="button" class="btn">Cancel</button>
-    </div>
-</form>
+    </section>
 </div>
 <app-footer-back></app-footer-back>

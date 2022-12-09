@@ -194,29 +194,7 @@ a[target='_blank'] {
  }
 
 
-.login-box form a {
-  position: relative;
-  display: inline-block;
-  padding: 10px 20px;
-  font-size: 16px;
-  text-decoration: none;
-  text-transform: uppercase;
-  overflow: hidden;
-  transition: all .5s;
-  margin-top: 40px;
-  letter-spacing: 4px;
-  color: #03e9f4;
-}
 
-.login-box a:hover {
-  background-color: #03e9f4;
-  color: #fff;
-  border-radius: 5px;
-  box-shadow: 0 0 5px #03e9f4,
-              0 0 25px #03e9f4,
-              0 0 50px #03e9f4,
-              0 0 100px #03e9f4;
-}
 
 .login-box a span {
   position: absolute;
@@ -234,17 +212,7 @@ a[target='_blank'] {
     left: 100%;
   }
 }
-.login-box a span:nth-child(1) {
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 2px;
-  background: linear-gradient(90deg, transparent, #03e9f4);
-  animation: btnAnimA 1500ms linear infinite;
-  /* animation-delay: 200ms; */
-  animation-fill-mode: backwards;
-  animation-play-state: running;
-}
+
 
 
 @keyframes btnAnimB {
@@ -257,15 +225,6 @@ a[target='_blank'] {
   100% {
     top: 100%;
   }
-}
-.login-box a span:nth-child(2) {
-  top: -100%;
-  right: 0;
-  width: 2px;
-  height: 100%;
-  background: linear-gradient(180deg, transparent, #03e9f4);
-  animation: btnAnimB 1500ms linear infinite;
-  animation-delay: 300ms;
 }
 
 
@@ -280,15 +239,7 @@ a[target='_blank'] {
     right: 100%;
   }
 }
-.login-box a span:nth-child(3) {
-  bottom: 0;
-  right: -100%;
-  width: 100%;
-  height: 2px;
-  background: linear-gradient(270deg, transparent, #03e9f4);
-  animation: btnAnimC 1500ms linear infinite;
-  animation-delay: 600ms;
-}
+
 
 
 @keyframes btnAnimD {
@@ -299,13 +250,4 @@ a[target='_blank'] {
     bottom: 100%;
   }
 }
-.login-box a span:nth-child(4) {
-  left: 0;
-  bottom: -100%;
-  width: 2px;
-  height: 100%;
-  background: linear-gradient(360deg, transparent, #03e9f4);
-  animation: btnAnimD 1500ms linear infinite;
-  animation-delay: 900ms;
-} 
 

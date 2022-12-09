@@ -1,17 +1,24 @@
 
   <div class="row">
-    <div class="col-md-2" *ngFor="let a of listavis;let i = index">
+    <div class="col-md-2" *ngFor="let a of listavis;">
         <div class="card text-center" style="width: 12rem; ">
 
-            <img src="{{a.photo}}" class="rounded-circle shadow-1-strong mx-auto d-block" alt="..." style="width: 7rem;" >
+            <img src="assets/images/face.png" class="rounded-circle shadow-1-strong mx-auto d-block" alt="..." style="width: 4rem;" >
             <div class="card-body">
 
-                <h5 class="card-title">{{a.amis}}</h5>
+                <h5 class="card-title">{{a.membre}}</h5>
                 <p class="card-text">
-                    Rate : {{a.rate}}<i class="fas fa-star" style="color: #fcff42;"></i>
+                    Rate : {{a.valeur_avis}}<i class="fas fa-star" style="color: #fcff42;"></i>
                 </p>
 
             </div>
         </div>
+        <div >
+                    
+            <i style="color: rgb(223, 8, 8); margin-left: 20px;"><span
+            class="bi bi-trash fa-xs" style="color: rgb(223, 8, 8); margin-left: 20px;" (click)="delete(a)" style="margin-left: 10px;">Delete</span></i>
+        
+         
+         </div>
     </div>
 </div>

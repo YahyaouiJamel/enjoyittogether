@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
-import { CrudService } from 'src/app/services/crud.service';
+import { ActivatedRoute, Router } from '@angular/router';
+import { User } from 'src/app/model/User';
+import { UserService } from 'src/app/services/users.service';
 
 @Component({
   selector: 'app-users',
@@ -10,14 +11,14 @@ import { CrudService } from 'src/app/services/crud.service';
 export class UsersComponent implements OnInit {
   idt:any;
   users:any;
-  user:any;
+  
   id:any;
 nom:any;
 prenom:any;
-  constructor(private u:CrudService,private userservice:CrudService,private ac:ActivatedRoute,private s:CrudService ) { }
+  constructor(private u:UserService,private r:Router, private userservice:UserService,private ac:ActivatedRoute,private s:UserService ) { }
 
   ngOnInit(): void {
-    this.userservice.ListUser().subscribe(
+    this.userservice.getAllUser().subscribe(
       (d)=>{
         this.users=d;
         console.log(d);
@@ -38,21 +39,19 @@ prenom:any;
     this.u.addUser(f).subscribe(
       ()=>{
         console.log('succes')
+        this.r.navigate(['../crud'])
       }
     )
   }
-  delete(users:any):void{
+  delete(user:User):void{
     //this.idt=this.ac.snapshot.params['id'];
-    this.userservice.removeUser(this.users.id_membre).subscribe
+    this.userservice.deleteUser(user.id_membre).subscribe
       (res=>alert("Commentaire deleted successfully"));}
-  
-//  pdelete(comment:Commentaire):void {
-//     this.commentService.deleteComment(comment.id_commentaire).subscribe(res=>alert("Commentaire deleted successfully"));
-//   }
+
   update(f:any){
-    this.userservice.updateUser(f,this.ac.snapshot.params['id']).subscribe(
-      ()=>{console.log('Updated !');}
-    )
+    // this.userservice.updateUser(f,this.ac.snapshot.params['id']).subscribe(
+    //   ()=>{console.log('Updated !');}
+    // )
   }
   //get user by id
 

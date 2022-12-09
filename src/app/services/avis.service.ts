@@ -15,21 +15,25 @@ export class AvisService {
     'Content-Type': 'application/json'
     })
   }
+ 
+
   getAvis():Observable<Avis[]>{
     return this.http.get<Avis[]>(this.avisUrl);
   }
   addAvis (avis: Avis): Observable<Avis> {
-   
-    return this.http.post<Avis>(this.avisUrl, avis,this.httpOptions);}
+   avis.membre="salima";
+   avis.id_membre=1;
+   //avis.valeur_avis=2;
+    return this.http.post<Avis>(this.avisUrl+'/add', avis,this.httpOptions);}
   deleteAvis(id:any): Observable<any>{
-      return this.http.delete<any>(this.avisUrl+'/'+id);
+      return this.http.delete<any>(this.avisUrl+'/remove/'+id);
     }
   
   getAvisById(id:any):Observable<Avis>{
-      return this.http.get<Avis>(this.avisUrl+'/'+id);
+      return this.http.get<Avis>(this.avisUrl+'/avi/'+id);
     }
   
   updateAvis(id:any,avis: Avis): Observable<any>{
-      return this.http.put(this.avisUrl+'/'+id,avis,this.httpOptions);
+      return this.http.put(this.avisUrl+'/update/'+id, avis,this.httpOptions);
     }
 }

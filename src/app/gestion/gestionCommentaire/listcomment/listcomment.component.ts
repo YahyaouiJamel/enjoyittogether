@@ -16,6 +16,6 @@ export class ListcommentComponent implements OnInit {
     this.commentService.getComment().subscribe((data: Commentaire[])=>this.listcomment=data);
   }
   delete(comment:Commentaire):void {
-    this.commentService.deleteComment(comment.id).subscribe(res=>alert("Commentaire deleted successfully"));
+    this.commentService.deleteComment(comment.id_commentaire).subscribe(res=>alert("Commentaire deleted successfully"));
   }
 }

@@ -1,7 +1,9 @@
 export class Commentaire{
-    id!: number;
+    id_commentaire!: number;
     membre!: string;
-    commentaire!: string;
+    contenu!: string;
     date!:string;
-    photo!:string;
+    id_membre!: number;
+    voyage!:string;
+    id_voyage!: number;
 }
