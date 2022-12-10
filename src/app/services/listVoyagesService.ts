@@ -1,10 +1,10 @@
 import { Injectable, PipeTransform } from '@angular/core';
 import { DatePipe, DecimalPipe, LowerCasePipe } from "@angular/common";
 import { BehaviorSubject, Observable, of, Subject } from "rxjs";
-import { Voyage } from "../models/voyage";
+import { Voyage } from "../model/voyage";
 import { SortColumn, SortDirection } from './sortable.directive';
 import { debounceTime, delay, switchMap, tap } from 'rxjs/operators';
-import { LisVoyages } from "../models/listVoyages";
+import { VoyageService } from './voyage.service';
 
 interface SearchResult {
 	voyages: Voyage[];
@@ -34,7 +34,7 @@ function sort(voyages: Voyage[], column: SortColumn, direction: string): Voyage[
 
 function matches(voyage: Voyage, term: string, pipe: PipeTransform) {
 	return (
-		voyage.name.toLowerCase().includes(term.toLowerCase()) ||
+		voyage.nom.toLowerCase().includes(term.toLowerCase()) ||
 		pipe.transform(voyage.date).includes(term) 
 	);
 }
@@ -45,6 +45,10 @@ export class ListVoyagesService {
 	private _search$ = new Subject<void>();
 	private _voyages$ = new BehaviorSubject<Voyage[]>([]);
 	private _total$ = new BehaviorSubject<number>(0);
+    
+	private ListVoyages : any;
+
+
 
     private _state: State = {
 		page: 1,
@@ -54,7 +58,10 @@ export class ListVoyagesService {
 		sortDirection: '',
 	};
 
-    constructor(private pipe: LowerCasePipe) {
+    constructor(private pipe: LowerCasePipe, private serviceVoyage : VoyageService) {
+		this.serviceVoyage.getvoyages().subscribe( response => {
+			this.ListVoyages = response;
+	  });
 		this._search$
 			.pipe(
 				tap(() => this._loading$.next(true)),
@@ -115,7 +122,7 @@ export class ListVoyagesService {
 		const { sortColumn, sortDirection, pageSize, page, searchTerm } = this._state;
 
 		// 1. sort
-		let voyages = sort(LisVoyages, sortColumn, sortDirection);
+		let voyages = sort(this.ListVoyages, sortColumn, sortDirection);
 
 		// 2. filter
 		voyages = voyages.filter((voyage) => matches(voyage, searchTerm, this.pipe));

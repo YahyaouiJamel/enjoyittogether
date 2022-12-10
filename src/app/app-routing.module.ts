@@ -14,11 +14,15 @@ import { AjoutCommentComponent } from './gestion/gestionCommentaire/ajout-commen
 import { AjoutReponseComponent } from './gestion/gestionReponse/ajout-reponse/ajout-reponse.component';
 import { AmisComponent } from './back/amis/amis.component';
 import { LoginComponent } from './front/users/login/login.component';
+import { AddvoyageComponent } from './back/addvoyage/addvoyage.component';
+import { ListvoyageComponent } from './back/listvoyage/listvoyage.component';
 
 
 const routes: Routes = [
   {path: 'crud',component: UsersComponent},
   {path: 'admin',component: BackComponent},
+  {path: 'admin/addvoyage',component: AddvoyageComponent},
+  {path: 'admin/listevoyage',component: ListvoyageComponent},
   {path:'home',loadChildren:()=>import('./front/front-routing.module').then(m=>m.FrontRoutingModule)},
   {path: 'addc',component: AddcommentComponent},
   {path: 'addr',component: AddreponseComponent},

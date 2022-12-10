@@ -14,11 +14,13 @@ import { MessageComponent } from './message/message.component';
 import { InvitationComponent } from './invitation/invitation.component';
 import { ListComponent } from './list/list.component';
 import { AuthGuard } from '../services/auth.guard';
+import { AjoutvoyageComponent } from './ajoutvoyage/ajoutvoyage.component';
 
 
 const routes: Routes = [
   {path: '',component: FrontComponent},
   {path: 'deals',component: DealsFrontComponent},
+  {path: 'deals/ajoutvoyage',component:AjoutvoyageComponent },
   {path: 'about',component: AboutFrontComponent},
   {path: 'reservation',component: ReservationFrontComponent},
   {path: 'login',component: LoginComponent},

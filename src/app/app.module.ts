@@ -26,6 +26,9 @@ import { AjoutCommentComponent } from './gestion/gestionCommentaire/ajout-commen
 import { AjoutReponseComponent } from './gestion/gestionReponse/ajout-reponse/ajout-reponse.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AmisComponent } from './back/amis/amis.component';
+import { AddvoyageComponent } from './back/addvoyage/addvoyage.component';
+import { ListvoyageComponent } from './back/listvoyage/listvoyage.component';
+import { LowerCasePipe } from '@angular/common';
  
 
 @NgModule({
@@ -44,7 +47,9 @@ import { AmisComponent } from './back/amis/amis.component';
     ListreponseComponent,
     AjoutCommentComponent,
     AjoutReponseComponent,
-    AmisComponent
+    AmisComponent,
+    AddvoyageComponent,
+    ListvoyageComponent
     
     
   ],
@@ -74,7 +79,7 @@ import { AmisComponent } from './back/amis/amis.component';
  
     
   ],
-  providers: [],
+  providers: [LowerCasePipe],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

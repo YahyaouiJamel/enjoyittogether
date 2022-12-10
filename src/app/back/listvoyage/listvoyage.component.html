@@ -1,0 +1,147 @@
+<app-header-back></app-header-back>
+<app-nav-back></app-nav-back>
+<div class="container-fluid page-body-wrapper">
+    <app-side-back></app-side-back>
+    <router-outlet></router-outlet>
+<section  class="container-xl">
+    <div class="content-wrapper">
+    <div class="container my-5 py-5">      
+    <h1 class="heading">Liste voyages </h1>
+    <div class="table-responsive">
+        <div class="table-wrapper">
+            <label for="table-complete-search" class="col-xs-3 col-sm-auto col-form-label">Recherche:</label>
+            <div class="col-xs-3 col-sm-auto">
+                <input
+                    id="table-complete-search"
+                    type="text"
+                    class="form-control"
+                    name="searchTerm"
+                    [(ngModel)]="service.searchTerm"
+                />
+            </div>
+            <span class="col col-form-label" *ngIf="service.loading$ | async">Chargement...</span>
+        </div>
+
+        <table class="table table-striped">
+            <thead class="">
+                <tr>
+                    <th scope="col" >Id Voyage</th>
+                    <th scope="col" sortable="name" (sort)="onSort($event)">Nom Voyage</th>
+                    <th scope="col" sortable="description" (sort)="onSort($event)">Description</th>
+                    <th scope="col" >Date</th>
+                    <th scope="col" sortable="typeVoyage" (sort)="onSort($event)">Type Voyage</th>
+                    <th scope="col">Action</th>
+               </tr>
+            </thead>
+            <body>
+                <tr *ngFor="let voyage of voyages$ | async">
+                    <td scope="row">{{voyage.id_voyage}}</td> 
+                    <td><ngb-highlight [result]="voyage.nom" [term]="service.searchTerm"></ngb-highlight></td> 
+                    <td><ngb-highlight [result]="voyage.description" [term]="service.searchTerm"></ngb-highlight></td> 
+                    <td><ngb-highlight [result]="voyage.date" [term]="service.searchTerm"></ngb-highlight></td> 
+                    <td><ngb-highlight [result]="voyage.typeVoyage" [term]="service.searchTerm"></ngb-highlight></td> 
+                    <td>
+                        <a href="#editVoyageModal" class="btn btn-success" data-toggle="modal" style="
+						border-radius: 30px;"><i class="material-icons">&#xE147;</i> <span>modifier</span></a>
+                        <input type="button" class="btn" value="supprimer" (click)="deleteVoyage(voyage.id_voyage)" >
+                    </td>
+                </tr>
+            </body>
+        </table>
+
+        <div class="d-flex justify-content-between p-2">
+            <ngb-pagination [collectionSize]="(total$ | async)!" [(page)]="service.page" [pageSize]="service.pageSize">
+            </ngb-pagination>
+    
+            <select class="form-select" style="width: auto" name="pageSize" [(ngModel)]="service.pageSize">
+                <option [ngValue]="2">2 items per page</option>
+                <option [ngValue]="4">4 items per page</option>
+                <option [ngValue]="6">6 items per page</option>
+            </select>
+        </div>
+
+    </div>
+      </div>
+</div>
+</section>
+</div>    
+
+<div id="editVoyageModal" class="modal fade">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<form #f="ngForm" >
+				<div class="modal-header">						
+					<h4 class="modal-title">Modifier Voyage</h4>
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+				</div>
+				<div class="modal-body" >	
+                    
+                    <div class="col-md-8">
+                        <label class="form-label" for="name">Nom :</label>
+                        <input class="form-control" type="text" class="text form-control" size="20" id="name" formControlName="name" />
+                        <div *ngIf="addVoyageForm.controls['name'].invalid && (addVoyageForm.controls['name'].dirty || addVoyageForm.controls['name'].touched)" class="alert">
+                            <div class="error-required" *ngIf="addVoyageForm.controls['name'].errors?.['required']">
+                                Le nom du voyage est obligatoire.
+                            </div>
+                            <div *ngIf="addVoyageForm.controls['name'].errors?.['minlength']">
+                                Le nom du voyage doit contenir au minimum 3 caractère.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-8" style="margin-top: 2em;">
+                        <label class="form-label">Description :</label>
+                        <textarea  id="exampleFormControlTextarea1" rows="3" class="text form-control" name="description" rows="4" cols="20" formControlName="description" >
+                        </textarea>
+                        <div *ngIf="addVoyageForm.controls['description'].invalid && (addVoyageForm.controls['description'].dirty || addVoyageForm.controls['description'].touched)" class="alert">
+                            <div class="error-required" *ngIf="addVoyageForm.controls['description'].errors?.['required']">
+                                la description du voyage est obligatoire.
+                            </div>
+                            <div *ngIf="addVoyageForm.controls['description'].errors?.['minlength']">
+                                Le description du voyage doit contenir au minimum 5 caractère.
+                            </div>
+                        </div>
+                </div>
+                <div class="col-md-8" style="margin-top: 2em;">
+                    <label class="form-label">Date :</label>
+                    <input  class="form-control" type="date" size="20" id="date" formControlName="date" />
+                    <div *ngIf="addVoyageForm.controls['date'].invalid && (addVoyageForm.controls['date'].dirty || addVoyageForm.controls['date'].touched)" class="alert">
+                        <div class="error-required" *ngIf="addVoyageForm.controls['date'].errors?.['required']">
+                            Veuillez sélectionner une date.
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-8" style="margin-top: 2em;">
+                    <label class="form-label">Type Voyage :</label>
+                    <select class="form-select" name="typeVoyage" id="typeVoyage" formControlName="typeVoyage" (change)="changetypeVoyage($event)">
+                        <!--<option value="default">Type Voyage</option>-->
+                        <option value="rando">Randonnée</option>
+                        <option value="camping">Camping</option>
+                        <option value="coivaturage">Covoiturage</option>
+                        <option value="autre">Autre</option>
+                      </select>
+                    <div *ngIf="addVoyageForm.controls['typeVoyage'].invalid && (addVoyageForm.controls['typeVoyage'].dirty || addVoyageForm.controls['typeVoyage'].touched) && showAutre" class="alert">
+                        <div class="error-required">
+                            Veuillez saisir un type de voyage.
+                        </div>
+                    </div>  
+                    <div class="col-md-8" *ngIf="showAutre" style="margin-top: 2em;">
+                        <label class="form-label">Autre type de Voyage :</label>
+                        <input class="form-control" type="text" class="text form-control" size="20" id="autreType" formControlName="autreType" [attr.required]="'showAutre'" />
+                        <div *ngIf="addVoyageForm.controls['autreType'].invalid && (addVoyageForm.controls['autreType'].dirty || addVoyageForm.controls['autreType'].touched)" class="alert">
+                            <div class="error-required">
+                                Veuillez saisir un autre type de voyage.
+                            </div>
+                        </div>
+                    </div>    
+                </div>
+                </div>
+                <div class="modal-footer">
+					<input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel" >
+					<input type="submit" class="btn btn-info"   value="Save" (click)="update(f.value)">
+				</div>
+            </form>    
+        </div>
+    </div>
+</div>    
+
+<app-footer-back></app-footer-back>

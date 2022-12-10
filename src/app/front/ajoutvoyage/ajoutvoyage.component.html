@@ -1,0 +1,90 @@
+<app-nav-front></app-nav-front>
+<div class="page-heading">
+    <div class="container">
+      
+    </div>
+  </div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-8 offset-2">
+
+<section class="about" id="packages">
+
+    <div  class="image">
+        <img id="imgadd" src="../../../assets/imagesf/about-left-image.jpg">
+    </div>
+    <div class="content">
+        <form [formGroup]="addVoyageForm" (ngSubmit)="onSubmitForm()"> 
+
+            <div class="col-md-8" style="margin-top: 2em;"> 
+                <label class="form-label" for="name">Nom :</label>
+                <input class="form-control text" type="text"  size="20" id="name" formControlName="name" />
+                <div *ngIf="addVoyageForm.controls['name'].invalid && (addVoyageForm.controls['name'].dirty || addVoyageForm.controls['name'].touched)" class="alert">
+                    <div class="error-required" *ngIf="addVoyageForm.controls['name'].errors?.['required']">
+                        Le nom du voyage est obligatoire.
+                    </div>
+                    <div *ngIf="addVoyageForm.controls['name'].errors?.['minlength']">
+                        Le nom du voyage doit contenir au minimum 3 caractère.
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-8" style="margin-top: 2em;">
+                <label class="form-label">Description :</label>
+                <textarea  id="exampleFormControlTextarea1" rows="3" class="text form-control" name="description" rows="4" cols="20" formControlName="description" >
+                </textarea>
+                <div *ngIf="addVoyageForm.controls['description'].invalid && (addVoyageForm.controls['description'].dirty || addVoyageForm.controls['description'].touched)" class="alert">
+                    <div class="error-required" *ngIf="addVoyageForm.controls['description'].errors?.['required']">
+                        ldescription du voayage est obligatoire.
+                    </div>
+                    <div *ngIf="addVoyageForm.controls['description'].errors?.['minlength']">
+                        Le description du voyage doit contenir au minimum 5 caractère.
+                    </div>
+                </div>
+        </div>
+        <div class="col-md-8" style="margin-top: 2em;">
+            <label class="form-label">Date :</label>
+            <input  class="form-control" type="date" size="20" id="date" formControlName="date" />
+            <div *ngIf="addVoyageForm.controls['date'].invalid && (addVoyageForm.controls['date'].dirty || addVoyageForm.controls['date'].touched)" class="alert">
+                <div class="error-required" *ngIf="addVoyageForm.controls['date'].errors?.['required']">
+                    Veuillez sélectionner une date.
+                </div>
+            </div>
+        </div>
+        <div class="col-md-8" style="margin-top: 2em;">
+            <label class="form-label">Type Voyage :</label>
+            <select class="form-select" name="typeVoyage" id="typeVoyage" formControlName="typeVoyage" (change)="changetypeVoyage($event)">
+                <!--<option value="default">Type Voyage</option>-->
+                <option value="rando">Randonnée</option>
+                <option value="camping">Camping</option>
+                <option value="coivaturage">Covoiturage</option>
+                <option value="autre">Autre</option>
+              </select>
+            <div *ngIf="addVoyageForm.controls['typeVoyage'].invalid && (addVoyageForm.controls['typeVoyage'].dirty || addVoyageForm.controls['typeVoyage'].touched) && showAutre" class="alert">
+                <div class="error-required">
+                    Veuillez saisir un type de voyage.
+                </div>
+            </div>  
+            <div class="col-md-8" *ngIf="showAutre" style="margin-top: 2em;">
+                <label class="form-label">Autre type Voyage :</label>
+                <input class="form-control" type="text" class="text" size="20" id="autreType" formControlName="autreType" [attr.required]="'showAutre'" />
+                <div *ngIf="addVoyageForm.controls['autreType'].invalid && (addVoyageForm.controls['autreType'].dirty || addVoyageForm.controls['autreType'].touched)" class="alert">
+                    <div class="error-required">
+                        Veuillez saisir un autre type de voyage.
+                    </div>
+                </div>
+            </div>    
+        </div>
+        <div class="action-buttons" style="margin-top: 2em;">
+            <input type="submit" value="Enregistrer" [disabled]="!addVoyageForm.valid" class="btn"/>
+            <input routerlink="/home/voyages" type="button" value="Retour" class="btn"/>
+        </div>
+       
+        </form>
+    </div>
+</section>
+</div>
+    </div>
+    </div>
+
+    <app-footer-front></app-footer-front>

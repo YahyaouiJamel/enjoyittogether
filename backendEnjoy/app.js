@@ -11,6 +11,8 @@ var avisRouter = require('./controllers/avis');
 var reponseRouter = require('./controllers/reponse');
 var userRouter=require('./routes/users');
 var reponseRouter = require('./controllers/reponse');
+var voyageRouter=require('./controllers/voyage');
+var typevoyageRouter=require('./controllers/type_voyage');
 var app = express();
 
 // connect to database
@@ -35,7 +37,10 @@ app.use('/users', usersRouter);
 app.use('/commentaire', commentaireRouter);
 app.use('/avis', avisRouter);
 app.use('/user', userRouter);
-app.use('/reponse', reponseRouter)
+app.use('/reponse', reponseRouter);
+app.use('/voyage',voyageRouter);
+app.use('/typevoyage',typevoyageRouter);
+
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));

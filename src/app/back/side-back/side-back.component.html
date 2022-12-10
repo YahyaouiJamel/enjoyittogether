@@ -66,22 +66,27 @@
           <i class="mdi mdi-chart-bar menu-icon"></i>
         </a>
       </li>
-     
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/admin/listevoyage">
+          <span class="menu-title">liste voyage</span>
+          <i class="mdi mdi-format-list-bulleted menu-icon"></i>
+        </a>
+      </li>
    
       <li class="nav-item sidebar-actions">
         <span class="nav-link">
           <div class="border-bottom">
-            <h6 class="font-weight-normal mb-3">Voyages</h6>
+           
           </div>
-          <button class="btn btn-block btn-lg btn-gradient-primary mt-4">+ Add a voyage</button>
+          <button class="btn btn-block btn-lg btn-gradient-primary mt-4" routerLink="/admin/addvoyage">+ Add a voyage</button>
           <div class="mt-4">
             <div class="border-bottom">
               <p class="text-secondary">Type voyage</p>
             </div>
             <ul class="gradient-bullet-list mt-4">
-              <li>Comping</li>
-              <li>Couvoiturage</li>
-              <li></li>
+              <li>Camping</li>
+              <li>Covoiturage</li>
+              <li>Randonnée</li>
             </ul>
           </div>
         </span>

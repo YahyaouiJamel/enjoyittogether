@@ -1,0 +1,36 @@
+
+ *{
+    background-color: rgb(237, 240, 202);
+ }
+
+
+form input[type=text] {
+    width: auto;
+    background: none;
+    text-transform: none;
+    font-size: 1.6rem;
+    color: #10221b;
+    padding: 0 1.3rem;
+    border: 1px solid;
+}
+
+form textarea{
+    border:1px solid;
+}
+
+form .error-required {
+    color: red;
+}
+
+th[sortable] {
+    cursor: pointer;
+}
+
+.btn {
+    margin-right: 1rem;
+    padding: 0.5rem;
+    font-size: 1rem;
+}
+#imgadd{
+width: 15em;    
+}

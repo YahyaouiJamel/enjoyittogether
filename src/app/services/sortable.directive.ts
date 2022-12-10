@@ -1,5 +1,5 @@
 import { Directive, EventEmitter, Input, Output } from '@angular/core';
-import { Voyage } from '../models/voyage';
+import { Voyage } from '../model/voyage';
 
 export type SortColumn = keyof Voyage | '';
 export type SortDirection = 'asc' | 'desc' | '';
