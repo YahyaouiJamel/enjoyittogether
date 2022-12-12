@@ -33,7 +33,8 @@ router.put('/update/:id',(req,res)=>{
     })
   });
 
-    router.get('/fetch',(req,res)=>{
+
+    router.get('/',(req,res)=>{
       db.voyage_model.findAll().then((response)=>{
         res.status(200).send(response)}).catch((err)=>{
       res.status(400).send(err)

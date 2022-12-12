@@ -47,6 +47,15 @@ module.exports = sequelize => {
       autoIncrement: false,
       comment: null,
       field: "type"
+    },
+    img: {
+      type: DataTypes.TEXT,
+      allowNull: false,
+      defaultValue: null,
+      primaryKey: false,
+      autoIncrement: false,
+      comment: null,
+      field: "img"
     }
   };
   const options = {

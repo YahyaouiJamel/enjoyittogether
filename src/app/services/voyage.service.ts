@@ -18,7 +18,7 @@ public addVoyage(voyage: any): Observable<any> {
  
 public getvoyages(): Observable<any>{
   const urlJson = 'http://localhost:3000/voyages';
-  const url = 'http://localhost:3000/voyage/fetch';
+  const url = 'http://localhost:3000/voyages';
   return this.http.get(url);
  
     }

@@ -30,6 +30,8 @@ const routes: Routes = [
   {path: 'invitation',component: InvitationComponent},
   {path: 'list',component: ListComponent},
   {path: 'msg',component: MessageComponent},
+  {path: 'addvoyage',component: AjoutvoyageComponent},
+
 
 ];
 
