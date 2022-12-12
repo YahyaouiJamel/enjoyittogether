@@ -19,9 +19,12 @@ export class DealsFrontComponent implements OnInit {
   VoyageList : any ;
 
   ngOnInit(): void {
-    this.voyageService.getvoyages().subscribe( Response => {
-      this.VoyageList=Response;
-     });
+    this.voyageService.getvoyages().subscribe(
+      (d)=>{
+        this.VoyageList=d;
+        console.log(d);
+      }
+    )
     }
   
     public deleteVoyage(id : number) {
